@@ -49,7 +49,10 @@ const Navbar = () => (
 
         <MenuWrapper>
           <NavMenu />
-          <NotificationsNoneIcon />
+          <li>
+            <NotificationsNoneIcon />
+          </li>
+
           <li>
             <button>Login</button>
           </li>
