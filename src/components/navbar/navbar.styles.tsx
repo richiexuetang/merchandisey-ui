@@ -141,12 +141,13 @@ export const Searchbox = styled.input`
   border-radius: 3px;
   border: 1px solid;
   height: 3rem;
-  background: inherit;
+  //background: inherit;
   border-color: #a1a5a4;
   font-size: 1.125rem;
   transition-property: background-color, border-color, color, fill, stroke,
     opacity, box-shadow, transform;
   transition-duration: 200ms;
+  background-color: #fafafa;
 
   ::placeholder,
   ::-webkit-input-placeholder {
@@ -365,5 +366,4 @@ export const MenuList = styled.li`
     font-size: var(--chakra-fontSizes-md);
   }
 `;
-//export const MenuItemDropdown = styled.ul
 //#endregion

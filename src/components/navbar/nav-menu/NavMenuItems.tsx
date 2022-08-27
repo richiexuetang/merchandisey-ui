@@ -3,6 +3,8 @@ import { MenuItem } from '../../../navMenuItems';
 import Dropdown from './Dropdown';
 import './index.css';
 import * as Styled from '../navbar.styles';
+import { NotificationsNone } from '@mui/icons-material';
+import { Button, Text } from '@chakra-ui/react';
 
 export interface NavMenuItemsProps {
   items: MenuItem;
@@ -40,27 +42,69 @@ const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
     dropdown && setDropdown(false);
   };
 
+  if (items.type === 'icon') {
+    return (
+      <li>
+        <Button className='notification-button'>
+          <NotificationsNone />
+        </Button>
+      </li>
+    );
+  } else if (items.type === 'button') {
+    console.log(items.url);
+    return (
+      <li>
+        {/* <CustomButton variant={items.url} children={items.title} /> */}
+        {items.url === 'login' ? (
+          <Button
+            type='button'
+            display='inline-flex'
+            borderRadius={0}
+            appearance='none'
+            variant='outline'
+            _hover={{ bgColor: 'neutral.black', color: 'neutral.white' }}
+          >
+            <Text lineHeight='md' fontSize='md' letterSpacing='0.004rem'>
+              {items.title}
+            </Text>
+          </Button>
+        ) : (
+          <Button
+            type='button'
+            display='inline-flex'
+            borderRadius={0}
+            appearance='none'
+            variant='solid'
+            bg='neutral.600'
+            color='neutral.black'
+            _hover={{ bg: 'neutral.black', color: 'neutral.200' }}
+          >
+            <Text
+              color='neutral.white'
+              lineHeight='md'
+              fontSize='md'
+              letterSpacing='0.004rem'
+            >
+              {items.title}
+            </Text>
+          </Button>
+        )}
+      </li>
+    );
+  }
+  // bg: 'neutral.600',
+  //           color: 'neutral.white',
+  //           _hover: { bg: 'neutral.black', color: 'neutral.200' },
   return (
     <li
-      className='menu-list'
+      className={`${depthLevel > 0 ? 'menu-list' : ''}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={closeDropdown}
     >
       {items.submenu && items.url ? (
         <React.Fragment>
-          <button
-            type='button'
-            aria-haspopup='menu'
-            aria-expanded={dropdown ? 'true' : 'false'}
-            onClick={() => setDropdown((prev) => !prev)}
-          >
-            {window.innerWidth < 960 && depthLevel === 0 ? (
-              items.title
-            ) : (
-              <Styled.MenuLink to={items.url}>{items.title}</Styled.MenuLink>
-            )}
-          </button>
+          <Styled.MenuLink to={items.url}>{items.title}</Styled.MenuLink>
           <Dropdown
             depthLevel={depthLevel}
             submenus={items.submenu}

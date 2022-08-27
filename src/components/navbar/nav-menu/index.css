@@ -18,6 +18,9 @@ header {
   border-right: 2px solid transparent;
   cursor: pointer;
   padding-inline: 8px;
+
+  min-width: 160px;
+  font-size: 1rem;
 }
 
 .menu-list:hover {
@@ -114,19 +117,15 @@ header {
   background-color: var(--chakra-colors-neutral-200);
 }
 
-/* content */
-
-.content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 20px;
-}
-
-.content h2 {
-  margin-bottom: 1rem;
-}
-
-.content a {
-  color: #cc3852;
-  margin-right: 10px;
+.notification-button {
+  line-height: 1;
+  background: transparent !important;
+  min-width: auto;
+  width: 1.5rem;
+  line-height: 1;
+  text-overflow: clip;
+  margin-right: 0.75rem;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  height: 42px;
 }

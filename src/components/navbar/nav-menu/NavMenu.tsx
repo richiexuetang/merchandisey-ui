@@ -9,6 +9,7 @@ const NavMenu = () => {
       <Styled.MenuWrapper>
         {navMenuItems.map((menu, index) => {
           const depthLevel = 0;
+
           return (
             <NavMenuItems items={menu} key={index} depthLevel={depthLevel} />
           );

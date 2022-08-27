@@ -1,35 +1,23 @@
-// import { ButtonHTMLAttributes } from 'react';
-// import * as Styled from './Button.styled';
+import { Button, Text, useStyleConfig, ButtonProps } from '@chakra-ui/react';
 
-// export enum BUTTON_TYPE_CLASSES {
-//   base = 'base',
-//   login = 'login',
-//   signup = 'signup',
-// }
+interface CustomButtonProps extends ButtonProps {
+  variant: string;
+  text?: string;
+}
 
-// const getButton = (
-//   buttonType = BUTTON_TYPE_CLASSES.base
-// ): typeof Styled.BaseButton =>
-//   ({
-//     [BUTTON_TYPE_CLASSES.base]: Styled.BaseButton,
-//     [BUTTON_TYPE_CLASSES.login]: Styled.LoginButton,
-//     [BUTTON_TYPE_CLASSES.signup]: Styled.SignUpButton,
-//   }[buttonType]);
+const CustomButton: React.FC<CustomButtonProps> = ({
+  variant,
+  children,
+  ...rest
+}) => {
+  const styles = useStyleConfig('CustomButton', { variant });
+  console.log('fuck', variant, styles);
 
-// export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-//   buttonType?: BUTTON_TYPE_CLASSES;
-// }
+  return (
+    <Button _css={styles} {...rest}>
+      <Text>{children}</Text>
+    </Button>
+  );
+};
 
-// const Button: React.FC<ButtonProps> = ({
-//   children,
-//   buttonType,
-//   ...otherProps
-// }) => {
-//   const CustomButton = getButton(buttonType);
-
-//   return <CustomButton {...otherProps}>{children}</CustomButton>;
-// };
-
-// export default Button;
-
-export {};
+export default CustomButton;

@@ -3,6 +3,30 @@ import Suisseintl from '../assets/fonts/SuisseintlRegular.woff2';
 import { extendTheme } from '@chakra-ui/react';
 
 export const theme = extendTheme({
+  components: {
+    CustomButton: {
+      baseStyle: {
+        display: 'inline-flex',
+        appearance: 'none',
+        borderRadius: 0,
+      },
+      variants: {
+        login: {
+          bg: 'neutral.black',
+          color: 'neutral.white',
+          _hover: { bg: 'neutral.black', color: 'neutral.white' },
+        },
+        signup: {
+          bg: 'neutral.600',
+          color: 'neutral.white',
+          _hover: { bg: 'neutral.black', color: 'neutral.200' },
+        },
+      },
+      defaultProps: {
+        variant: 'login',
+      },
+    },
+  },
   colors: {
     neutral: {
       black: '#0f0f0f',
@@ -11,6 +35,9 @@ export const theme = extendTheme({
       600: '#393939',
       700: '#242424',
     },
+  },
+  lineHeights: {
+    md: 1.375,
   },
   fonts: {
     body: `'SuisseIntl-Regular', sans-serif`,

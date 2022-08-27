@@ -881,12 +881,12 @@ export const navMenuItems: MenuItem[] = [
   },
   {
     title: 'Login',
-    url: '/login',
+    url: 'login',
     type: 'button',
   },
   {
     title: 'Sign Up',
-    url: '/sign-up',
+    url: 'signup',
     type: 'button',
   },
 ];
