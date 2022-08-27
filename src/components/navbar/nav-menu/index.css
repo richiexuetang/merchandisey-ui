@@ -18,21 +18,11 @@ header {
   border-right: 2px solid transparent;
   cursor: pointer;
   padding-inline: 8px;
+}
 
-  @media screen and (min-width: 48em) {
-    min-width: 115px;
-    font-size: var(--chakra-fontSizes-sm);
-  }
-
-  @media screen and (min-width: 62em) {
-    min-width: 132px;
-    font-size: var(--chakra-fontSizes-sm);
-  }
-
-  @media screen and (min-width: 80em) {
-    min-width: 160px;
-    font-size: var(--chakra-fontSizes-md);
-  }
+.menu-list:hover {
+  border-style: solid;
+  border-right: 2px solid #006340;
 }
 
 .dropdown {

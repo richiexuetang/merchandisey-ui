@@ -49,14 +49,18 @@ const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
     >
       {items.submenu && items.url ? (
         <React.Fragment>
-          <Styled.MenuLink
-            to={items.url}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            onClick={closeDropdown}
+          <button
+            type='button'
+            aria-haspopup='menu'
+            aria-expanded={dropdown ? 'true' : 'false'}
+            onClick={() => setDropdown((prev) => !prev)}
           >
-            {items.title}
-          </Styled.MenuLink>
+            {window.innerWidth < 960 && depthLevel === 0 ? (
+              items.title
+            ) : (
+              <Styled.MenuLink to={items.url}>{items.title}</Styled.MenuLink>
+            )}
+          </button>
           <Dropdown
             depthLevel={depthLevel}
             submenus={items.submenu}

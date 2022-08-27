@@ -344,40 +344,25 @@ export const MenuLink = styled(Link)`
   }
 `;
 
-export const InitialDropdown = styled.ul`
-  position: absolute;
-  top: 100%;
-  z-index: 1000;
-  float: left;
-  padding: 0px;
-  margin: 0px;
-  box-shadow: rgb(0 0 0 / 25%) 0px 4px 4px, rgb(0 0 0 / 10%) 0px -2px 4px;
-  font-weight: 600;
-  color: var(--chakra-colors-neutral-700);
-  list-style: none;
-  background-color: var(--chakra-colors-neutral-white);
-  background-clip: padding-box;
+export const MenuList = styled.li`
+  font-weight: 400;
+  border-right: 2px solid transparent;
+  cursor: pointer;
+  padding-inline: 8px;
 
   @media screen and (min-width: 48em) {
-    left: -78px;
-    width: 115px;
+    min-width: 115px;
+    font-size: var(--chakra-fontSizes-sm);
   }
 
   @media screen and (min-width: 62em) {
-    width: 132px;
+    min-width: 132px;
+    font-size: var(--chakra-fontSizes-sm);
   }
 
   @media screen and (min-width: 80em) {
-    left: -100px;
-    width: 160px;
-  }
-`;
-
-export const NavMenuBarItem = styled.li`
-  &.hover {
-    > ul {
-      display: block;
-    }
+    min-width: 160px;
+    font-size: var(--chakra-fontSizes-md);
   }
 `;
 //export const MenuItemDropdown = styled.ul
