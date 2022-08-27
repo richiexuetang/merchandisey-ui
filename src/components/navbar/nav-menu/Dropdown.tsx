@@ -17,12 +17,18 @@ const Dropdown: React.FC<DropdownProps> = ({
   const dropdownClass = depthLevel > 1 ? 'dropdown-submenu' : '';
 
   return (
-    <ul className={`dropdown ${dropdownClass} ${dropdown ? 'show' : ''}`}>
-      {submenus.map((submenu, index) => (
-        <li key={index} className='menu-items'>
-          <NavMenuItems items={submenu} key={index} depthLevel={depthLevel} />
-        </li>
-      ))}
+    <ul
+      className={`dropdown ${dropdownClass} ${dropdown ? 'show' : ''} ${
+        depthLevel > 1 ? 'category' : ''
+      }`}
+    >
+      <div className={`${depthLevel > 2 ? 'category-container' : ''}`}>
+        {submenus.map((submenu, index) => (
+          <li key={index} className='menu-list category-list'>
+            <NavMenuItems items={submenu} key={index} depthLevel={depthLevel} />
+          </li>
+        ))}
+      </div>
     </ul>
   );
 };

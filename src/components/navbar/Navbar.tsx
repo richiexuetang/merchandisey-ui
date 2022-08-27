@@ -1,22 +1,5 @@
 import React from 'react';
-import {
-  Container,
-  Search,
-  Searchbox,
-  Wrapper,
-  NavLogo,
-  MenuItem,
-  MenuLink,
-  SiteHeader,
-  NavLogoContainer,
-  NavLogoLink,
-  SearchbarContainer,
-  MenuWrapper,
-  DropdownContainer,
-  CategoryLevel,
-  CategoryContainer,
-} from './navbar.styles';
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import * as Styled from './navbar.styles';
 import SearchIcon from '@mui/icons-material/Search';
 import { ReactComponent as MerchYLogo } from '../../assets/svgs/logo.svg';
 import { Outlet } from 'react-router-dom';
@@ -24,44 +7,32 @@ import { NavMenu } from './nav-menu';
 
 const Navbar = () => (
   <React.Fragment>
-    <SiteHeader>
-      <Container>
+    <Styled.SiteHeader>
+      <Styled.Container>
         {/* Logo */}
-        <NavLogoContainer>
-          <NavLogoLink to='/'>
-            <NavLogo>
+        <Styled.NavLogoContainer>
+          <Styled.NavLogoLink to='/'>
+            <Styled.NavLogo>
               <MerchYLogo />
-            </NavLogo>
-          </NavLogoLink>
-        </NavLogoContainer>
+            </Styled.NavLogo>
+          </Styled.NavLogoLink>
+        </Styled.NavLogoContainer>
         {/* End of Logo */}
 
         {/* Searbar */}
-        <SearchbarContainer>
-          <Wrapper flexDirection='row' alignItems='normal'>
-            <Search>
+        <Styled.SearchbarContainer>
+          <Styled.Wrapper flexDirection='row' alignItems='normal'>
+            <Styled.Search>
               <SearchIcon />
-            </Search>
-            <Searchbox placeholder='Search for brand, color, etc.' />
-          </Wrapper>
-        </SearchbarContainer>
+            </Styled.Search>
+            <Styled.Searchbox placeholder='Search for brand, color, etc.' />
+          </Styled.Wrapper>
+        </Styled.SearchbarContainer>
         {/* End of Searchbar */}
 
-        <MenuWrapper>
-          <NavMenu />
-          <li>
-            <NotificationsNoneIcon />
-          </li>
-
-          <li>
-            <button>Login</button>
-          </li>
-          <li>
-            <button>Sign Up</button>
-          </li>
-        </MenuWrapper>
-      </Container>
-    </SiteHeader>
+        <NavMenu />
+      </Styled.Container>
+    </Styled.SiteHeader>
     <Outlet />
   </React.Fragment>
 );

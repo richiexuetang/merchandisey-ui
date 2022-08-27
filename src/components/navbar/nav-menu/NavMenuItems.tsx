@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { MenuItem } from '../../../navMenuItems';
 import Dropdown from './Dropdown';
 import './index.css';
-import { Link } from 'react-router-dom';
+import * as Styled from '../navbar.styles';
 
 export interface NavMenuItemsProps {
   items: MenuItem;
@@ -42,22 +42,21 @@ const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
 
   return (
     <li
-      className='menu-items'
+      className='menu-list'
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={closeDropdown}
     >
       {items.submenu && items.url ? (
         <React.Fragment>
-          <button
-            type='button'
-            aria-expanded={dropdown ? 'true' : 'false'}
-            // onMouseEnter={() => setDropdown(true)}
-            onClick={() => setDropdown((prev: boolean) => !prev)}
+          <Styled.MenuLink
+            to={items.url}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            onClick={closeDropdown}
           >
-            {items.title}{' '}
-            {depthLevel > 0 ? <span>&raquo;</span> : <span className='arrow' />}
-          </button>
+            {items.title}
+          </Styled.MenuLink>
           <Dropdown
             depthLevel={depthLevel}
             submenus={items.submenu}
@@ -65,7 +64,7 @@ const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
           />
         </React.Fragment>
       ) : (
-        <Link to={items.url}>{items.title}</Link>
+        <Styled.MenuLink to={items.url}>{items.title}</Styled.MenuLink>
       )}
     </li>
   );

@@ -1,29 +1,39 @@
-import { appBarClasses } from '@mui/material';
-
 export interface ItemAttributes {
   title: string;
   url: string;
+  type: string;
   submenu?: any;
+}
+
+export enum ItemTypes {
+  Dropdown = 'dropdown',
+  Link = 'link',
+  Icon = 'icon',
+  Button = 'button',
 }
 
 export interface MenuItem {
   title: string;
   url: string;
+  type: string;
   submenu?: ItemAttributes[];
 }
 
 export const navMenuItems: MenuItem[] = [
   {
     title: 'Browse',
-    url: '/',
+    url: '/browse',
+    type: 'dropdown',
     submenu: [
       {
         title: 'Sneakers',
         url: 'sneakers',
+        type: 'dropdown',
         submenu: [
           {
             title: 'Adidas',
             url: 'adidas',
+            type: 'dropdown',
             submenu: [
               {
                 title: 'Yeezy',
@@ -110,6 +120,7 @@ export const navMenuItems: MenuItem[] = [
           {
             title: 'Air Jordan',
             url: 'retro-jordan',
+            type: 'dropdown',
             submenu: [
               {
                 title: '1',
@@ -292,14 +303,38 @@ export const navMenuItems: MenuItem[] = [
           {
             title: 'Nike',
             url: 'nike',
+            type: 'dropdown',
+            submenu: [
+              {
+                title: 'Air Force',
+                url: 'air-foce',
+                type: 'link',
+              },
+            ],
           },
           {
             title: 'New Balance',
             url: 'new-balance',
+            type: 'dropdown',
+            submenu: [
+              {
+                title: '550',
+                url: '550',
+                type: 'link',
+              },
+            ],
           },
           {
             title: 'Reebok',
             url: 'reebok',
+            type: 'dropdown',
+            submenu: [
+              {
+                title: 'Answer',
+                url: 'answer',
+                type: 'link',
+              },
+            ],
           },
           {
             title: 'Converse',
@@ -334,6 +369,7 @@ export const navMenuItems: MenuItem[] = [
       {
         title: 'Apparel',
         url: 'apparel',
+        type: 'dropdown',
         submenu: [
           {
             title: 'Adidas Apparel',
@@ -430,6 +466,7 @@ export const navMenuItems: MenuItem[] = [
       {
         title: 'Electronics',
         url: 'electronics',
+        type: 'dropdown',
         submenu: [
           {
             title: 'Cretified Refurbished',
@@ -526,6 +563,7 @@ export const navMenuItems: MenuItem[] = [
       {
         title: 'Trading Cards',
         url: 'trading-cards',
+        type: 'dropdown',
         submenu: [
           {
             title: 'Baseball',
@@ -585,6 +623,7 @@ export const navMenuItems: MenuItem[] = [
       {
         title: 'Collectibles',
         url: 'collectibles',
+        type: 'dropdown',
         submenu: [
           {
             title: 'KAWS',
@@ -640,6 +679,7 @@ export const navMenuItems: MenuItem[] = [
       {
         title: 'Accessories',
         url: 'accessories',
+        type: 'dropdown',
         submenu: [
           {
             title: 'Swatch X Omega',
@@ -810,23 +850,43 @@ export const navMenuItems: MenuItem[] = [
       {
         title: 'NFTs',
         url: 'nfts',
+        type: 'dropdown',
       },
     ],
   },
   {
     title: 'News',
     url: '/news',
+    type: 'link',
   },
   {
     title: 'About',
     url: '/about/how-it-works',
+    type: 'dropdown',
   },
   {
     title: 'Help',
     url: '/help/home',
+    type: 'link',
   },
   {
     title: 'Sell',
     url: '/sell',
+    type: 'link',
+  },
+  {
+    title: 'Notification',
+    url: '/notification',
+    type: 'icon',
+  },
+  {
+    title: 'Login',
+    url: '/login',
+    type: 'button',
+  },
+  {
+    title: 'Sign Up',
+    url: '/sign-up',
+    type: 'button',
   },
 ];

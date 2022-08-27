@@ -4,98 +4,66 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: sans-serif;
-}
-
 header {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   color: #212529;
 }
 
-.nav-area {
-  display: flex;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 20px;
+.menu-item-container {
+  max-height: 680px;
 }
 
-.logo {
-  text-decoration: none;
-  font-size: 25px;
-  color: inherit;
-  margin-right: 20px;
-}
-
-.menus {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-
-.menu-items {
-  position: relative;
-  font-size: 14px;
-}
-
-.menu-items a {
-  display: block;
-  font-size: inherit;
-  color: inherit;
-  text-decoration: none;
-}
-
-.menu-items button {
-  display: flex;
-  align-items: center;
-  color: inherit;
-  font-size: inherit;
-  border: none;
-  background-color: transparent;
+.menu-list {
+  font-weight: 400;
+  border-right: 2px solid transparent;
   cursor: pointer;
-  width: 100%;
-}
+  padding-inline: 8px;
 
-button span {
-  margin-left: 3px;
-}
+  @media screen and (min-width: 48em) {
+    min-width: 115px;
+    font-size: var(--chakra-fontSizes-sm);
+  }
 
-.menu-items > a,
-.menu-items button {
-  text-align: left;
-  padding: 0.7rem 1rem;
-}
+  @media screen and (min-width: 62em) {
+    min-width: 132px;
+    font-size: var(--chakra-fontSizes-sm);
+  }
 
-.menu-items a:hover,
-.menu-items button:hover {
-  background-color: #f2f2f2;
-}
-
-.arrow::after {
-  content: '';
-  display: inline-block;
-  margin-left: 0.28em;
-  vertical-align: 0.09em;
-  border-top: 0.42em solid;
-  border-right: 0.32em solid transparent;
-  border-left: 0.32em solid transparent;
+  @media screen and (min-width: 80em) {
+    min-width: 160px;
+    font-size: var(--chakra-fontSizes-md);
+  }
 }
 
 .dropdown {
   position: absolute;
-  right: 0;
-  left: auto;
-  box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
-    0 4px 6px -2px rgba(71, 63, 79, 0.16);
-  font-size: 0.875rem;
-  z-index: 9999;
-  min-width: 10rem;
-  padding: 0.5rem 0;
+  top: 100%;
+  z-index: 1000;
+  float: left;
+  padding: 0px;
+  margin: 0px;
+  box-shadow: rgb(0 0 0 / 25%) 0px 4px 4px, rgb(0 0 0 / 10%) 0px -2px 4px;
+  border: none;
+  font-weight: 600;
+  color: var(--chakra-colors-neutral-700);
   list-style: none;
-  background-color: #fff;
-  border-radius: 0.5rem;
+  background-color: var(--chakra-colors-neutral-white);
+  background-clip: padding-box;
   display: none;
+
+  @media screen and (min-width: 48em) {
+    left: -78px;
+    width: 115px;
+  }
+
+  @media screen and (min-width: 62em) {
+    width: 132px;
+  }
+
+  @media screen and (min-width: 80em) {
+    left: -100px;
+    width: 160px;
+  }
 }
 
 .dropdown.show {
@@ -104,8 +72,56 @@ button span {
 
 .dropdown .dropdown-submenu {
   position: absolute;
+  top: 0px;
   left: 100%;
-  top: -7px;
+  max-height: 680px;
+  min-height: 100%;
+  background: var(--chakra-colors-neutral-white);
+  list-style: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px, rgba(0, 0, 0, 0.1) 0px -2px 4px;
+
+  font-size: 1rem;
+}
+
+.dropdown .level-3 {
+  position: absolute;
+  top: 0px;
+}
+
+.dropdown .level-3::-webkit-scrollbar {
+  display: none;
+}
+
+.category {
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  max-height: 680px;
+  min-height: 100%;
+  background: var(--chakra-colors-neutral-white);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px, rgba(0, 0, 0, 0.1) 0px -2px 4px;
+}
+
+.category-container {
+  min-height: 100%;
+  max-height: 680px;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+
+  min-width: 160px;
+}
+
+.category-container::-webkit-scrollbar {
+  display: none;
+}
+
+.category-list:hover {
+  border-style: solid;
+  border-width: 0;
+  border-right: 2px solid;
+
+  border-right-color: var(--chakra-colors-green-700) !important;
+  background-color: var(--chakra-colors-neutral-200);
 }
 
 /* content */

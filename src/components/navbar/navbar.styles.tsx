@@ -214,13 +214,13 @@ export const MenuWrapper = styled.ul`
     display: flex;
   }
 
-  &.hover {
+  /* &.hover {
     > li {
       display: block;
     }
-  }
+  } */
 
-  > li:hover {
+  li:hover {
     > ul {
       display: block;
     }
@@ -228,20 +228,20 @@ export const MenuWrapper = styled.ul`
 
   > li {
     position: relative;
-    margin: 0px;
     white-space: nowrap;
     font-weight: 500;
     text-transform: capitalize;
     list-style: none;
 
-    a:hover {
-      color: inherit;
+    &.hover {
+      > ul {
+        display: block;
+      }
     }
 
-    > ul {
+    /* > ul {
       display: none;
-    }
-
+    } */
     @media screen and (min-width: 48em) {
       margin: 0 2px;
 
@@ -271,17 +271,11 @@ export const MenuWrapper = styled.ul`
 
 export const MenuItem = styled.li`
   position: relative;
-  margin: 0px;
+  margin: 0px 4px;
   white-space: nowrap;
   font-weight: 500;
   text-transform: capitalize;
   list-style: none;
-
-  &:hover {
-    > ul {
-      display: block;
-    }
-  }
 
   @media only screen and (min-width: 48em) {
     margin: 0 2px;
@@ -299,6 +293,7 @@ export const MenuItem = styled.li`
 
   > a {
     display: block;
+    border-style: solid;
 
     @media only screen and (min-width: 48em) {
       padding: 8px 1px;
@@ -312,12 +307,18 @@ export const MenuItem = styled.li`
     @media only screen and (min-width: 80em) {
       padding: 8px;
     }
+
+    &:hover {
+      > ul {
+        display: block;
+      }
+      border-right: 2px solid #006340;
+    }
   }
 `;
 
 export const MenuLink = styled(Link)`
   text-decoration: none;
-  font-weight: bold;
   font-size: 1rem;
   color: #242424;
   display: flex;
@@ -327,15 +328,23 @@ export const MenuLink = styled(Link)`
   height: 100%;
   transition: all 0.2s ease;
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 80em) {
     display: block;
-    padding: 3rem;
+    padding: 8px;
     text-align: center;
     transition: all 0.2s ease;
   }
+
+  @media only screen and (max-width: 62em) {
+    font-size: var(--chakra-fontSizes-md);
+  }
+
+  > a {
+    display: block;
+  }
 `;
 
-export const DropdownContainer = styled.ul`
+export const InitialDropdown = styled.ul`
   position: absolute;
   top: 100%;
   z-index: 1000;
@@ -343,12 +352,20 @@ export const DropdownContainer = styled.ul`
   padding: 0px;
   margin: 0px;
   box-shadow: rgb(0 0 0 / 25%) 0px 4px 4px, rgb(0 0 0 / 10%) 0px -2px 4px;
-  border: 0;
   font-weight: 600;
-  color: #242424;
+  color: var(--chakra-colors-neutral-700);
   list-style: none;
-  background-color: #ffffff;
+  background-color: var(--chakra-colors-neutral-white);
   background-clip: padding-box;
+
+  @media screen and (min-width: 48em) {
+    left: -78px;
+    width: 115px;
+  }
+
+  @media screen and (min-width: 62em) {
+    width: 132px;
+  }
 
   @media screen and (min-width: 80em) {
     left: -100px;
@@ -356,27 +373,12 @@ export const DropdownContainer = styled.ul`
   }
 `;
 
-export const CategoryLevel = styled.ul`
-  display: none;
-  position: absolute;
-  top: 0px;
-  left: 100%;
-  max-height: 680px;
-  min-height: 100%;
-  background: #ffffff;
-  list-style: none;
-  box-shadow: rgb(0 0 0 / 25%) 0px 4px 4px, rgb(0 0 0 / 10%) 0px -2px 4px;
-
-  .level-3 {
-    font-size: 1rem;
+export const NavMenuBarItem = styled.li`
+  &.hover {
+    > ul {
+      display: block;
+    }
   }
 `;
-
-export const CategoryContainer = styled.div`
-  max-height: 680px;
-  overflow-y: hidden;
-  overscroll-behavior: contain;
-`;
-
 //export const MenuItemDropdown = styled.ul
 //#endregion
