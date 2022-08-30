@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MenuItem } from '../../../navMenuItems';
+import { MenuItem } from '../../../data/navMenuItems';
 import Dropdown from './Dropdown';
 import './index.css';
 import * as Styled from '../navbar.styles';

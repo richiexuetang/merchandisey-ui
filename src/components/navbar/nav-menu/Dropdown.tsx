@@ -1,4 +1,4 @@
-import { ItemAttributes } from '../../../navMenuItems';
+import { ItemAttributes } from '../../../data/navMenuItems';
 import './index.css';
 import NavMenuItems from './NavMenuItems';
 

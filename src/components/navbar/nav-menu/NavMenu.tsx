@@ -1,4 +1,4 @@
-import { navMenuItems } from '../../../navMenuItems';
+import { navMenuItems } from '../../../data/navMenuItems';
 import NavMenuItems from './NavMenuItems';
 import { Outlet } from 'react-router-dom';
 import * as Styled from '../navbar.styles';

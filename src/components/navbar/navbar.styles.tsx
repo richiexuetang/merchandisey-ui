@@ -7,6 +7,7 @@ export const SiteHeader = styled.div`
   position: sticky;
   top: 0px;
   z-index: 1030;
+  background: white;
 `;
 
 export const Container = styled.div`
@@ -51,15 +52,6 @@ export const NavLogo = styled.span`
       width: 125px;
     }
   }
-  /* cursor: pointer;
-  align-items: center;
-  text-decoration: none;
-  font-size: 2.5rem;
-  font-weight: 800;
-  transition: all 0.5s ease;
-
-  margin-left: 2.5rem;
-  margin-right: 2.5rem; */
 `;
 //#endregion
 

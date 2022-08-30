@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { ReactComponent as MerchYLogo } from '../../assets/svgs/logo.svg';
 import { Outlet } from 'react-router-dom';
 import { NavMenu } from './nav-menu';
+import Menubar from '../menubar/Menubar';
 
 const Navbar = () => (
   <React.Fragment>
@@ -33,6 +34,7 @@ const Navbar = () => (
         <NavMenu />
       </Styled.Container>
     </Styled.SiteHeader>
+    <Menubar />
     <Outlet />
   </React.Fragment>
 );
