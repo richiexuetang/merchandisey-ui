@@ -12,11 +12,30 @@ import {
   FormControl,
   Link,
   FormLabel,
+  InputRightElement,
+  InputGroup,
+  IconButton,
 } from '@chakra-ui/react';
 import { Link as ReachLink } from 'react-router-dom';
-import { Twitter, Facebook, Apple, Google } from '@mui/icons-material';
+import {
+  Twitter,
+  Facebook,
+  Apple,
+  Google,
+  Visibility,
+  VisibilityOff,
+} from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const LogIn = () => {
+  const navigate = useNavigate();
+
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const handleVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
   return (
     <Box
       data-component='page-container'
@@ -41,7 +60,11 @@ const LogIn = () => {
             h='50px'
             margin='6px 16px 0px 16px'
           >
-            <Button variant='accessToggle' flex='1'>
+            <Button
+              variant='accessToggle'
+              flex='1'
+              onClick={() => navigate('/signup')}
+            >
               Sign Up
             </Button>
             <Button variant='accessToggle' flex='1'>
@@ -94,8 +117,33 @@ const LogIn = () => {
 
                 {/* Password Form Field */}
                 <FormControl variant='floating'>
-                  <Input placeholder=' ' autoComplete='off' />
-                  <FormLabel>Password</FormLabel>
+                  <InputGroup>
+                    <Input
+                      type={passwordVisible ? 'text' : 'password'}
+                      placeholder=' '
+                      autoComplete='off'
+                      pr={8}
+                    />
+                    <InputRightElement>
+                      <IconButton
+                        mt='12px'
+                        mr='5px'
+                        bg='none'
+                        _hover={{
+                          bg: 'none',
+                        }}
+                        _active={{
+                          bg: 'none',
+                        }}
+                        onClick={handleVisibility}
+                        aria-label='show password icon'
+                        icon={
+                          passwordVisible ? <Visibility /> : <VisibilityOff />
+                        }
+                      />
+                    </InputRightElement>
+                    <FormLabel>Password</FormLabel>
+                  </InputGroup>
                 </FormControl>
 
                 <Flex justifyContent='flex-end'>

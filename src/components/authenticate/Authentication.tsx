@@ -28,8 +28,10 @@ import {
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import LogIn from './LogIn';
+import SignUp from './SignUp';
 
-const SignUp = () => {
+const Authentication = () => {
   const navigate = useNavigate();
 
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -187,4 +189,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Authentication;
