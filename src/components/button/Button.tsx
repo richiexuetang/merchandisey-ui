@@ -11,8 +11,6 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   ...rest
 }) => {
   const styles = useStyleConfig('CustomButton', { variant });
-  console.log('fuck', variant, styles);
-
   return (
     <Button _css={styles} {...rest}>
       <Text>{children}</Text>

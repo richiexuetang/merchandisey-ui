@@ -15,7 +15,7 @@ const HomePage = () => {
 
         <Container
           w='100%'
-          marginInlineEnd='auto'
+          marginInline='auto'
           maxWidth='1296px'
           paddingInline='1rem'
         >

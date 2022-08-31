@@ -230,9 +230,6 @@ export const MenuWrapper = styled.ul`
       }
     }
 
-    /* > ul {
-      display: none;
-    } */
     @media screen and (min-width: 48em) {
       margin: 0 2px;
 

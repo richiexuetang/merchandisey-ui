@@ -7,7 +7,6 @@ const ProductRow = () => {
   return (
     <>
       {productMetaData.map((productData, index) => {
-        console.log(productData.products);
         return (
           <Box data-component='ProductRow'>
             <ProductHeader
@@ -15,13 +14,12 @@ const ProductRow = () => {
               heading={productData.heading}
             />
             <Grid
+              data-component='SmartGridRow'
               as='ul'
               templateColumns='repeat(6, 1fr)'
               gridGap={{ base: 2, lg: 6 }}
               marginBottom={6}
-              marginInline='calc(var(--chakra-space-4) * -1)'
-              paddingInline='calc(var(--chakra-space-4) * -1)'
-              overflow='hidden'
+              overflow='auto'
             >
               <ProductCards key={index} products={productData.products} />
             </Grid>

@@ -1,4 +1,8 @@
-export const imageSlideData = [
+export interface ImageUrl {
+  image: string;
+}
+
+export const imageSlideData: ImageUrl[] = [
   {
     image:
       'https://images.contentstack.io/v3/assets/blt818b0c67cf450811/bltedd5ca5cbc839a77/6307c294ac78b51cbe2f9a1e/Supreme_FW22_Week_1_Marketing_AssetsPrimary_Desktop.jpg?quality=90&auto=webp&format=pjpg&height=450',

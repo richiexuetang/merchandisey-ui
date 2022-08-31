@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image } from '@chakra-ui/react';
+import { Box, Text, Flex, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { DefaultText } from '../../../styles/global';
 import { Product } from '../../../data';
@@ -17,14 +17,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       marginRight={0}
     >
       <Link to='/'>
-        <Flex
+        <Box
+          display='flex'
           flexDirection='column'
           borderColor='neutral.200'
-          borderStyle=''
-          borderWidth=''
+          justifyContent='center'
         >
           <Box margin={{ base: 2, lg: 4 }}>
-            <Flex
+            <Box
+              display='flex'
               justifyContent='center'
               width='140px'
               height='75px'
@@ -37,10 +38,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 src={product.imgSrc}
                 alt={product.name}
               />
-            </Flex>
+            </Box>
           </Box>
 
-          <Flex
+          <Box
+            display='flex'
             flexDirection='column'
             h='100%'
             padding={2}
@@ -59,12 +61,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               height='100%'
             >
               <Box>
-                <DefaultText textTransform='capitalize' marginTop={1}>
+                <DefaultText textTransform='capitalize' marginTop={1} h='auto'>
                   Lowest Ask
                 </DefaultText>
                 <DefaultText
                   fontSize={{ base: 'md', sm: 'xl' }}
-                  fontWeight='bold'
+                  fontWeight='700'
                   whiteSpace='nowrap'
                   marginTop={1}
                 >
@@ -74,8 +76,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </Flex>
 
             <Flex marginTop={1}>
-              <Button
-                as='span'
+              <Text
+                display='inline-flex'
+                verticalAlign='middle'
+                alignItems='center'
                 lineHeight='1.2'
                 borderRadius={0}
                 maxW='100%'
@@ -91,12 +95,21 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 background='beige.100'
                 height='22px'
                 padding='2px 0'
+                color='neutral.black'
+                fontFamily='suisseIntlMedium'
               >
-                <span>{product.sold} sold</span>
-              </Button>
+                <Text
+                  lineHeight='1.2'
+                  overflow='hidden'
+                  textOverflow='ellipsis'
+                  whiteSpace='nowrap'
+                >
+                  {product.sold} sold
+                </Text>
+              </Text>
             </Flex>
-          </Flex>
-        </Flex>
+          </Box>
+        </Box>
       </Link>
     </Box>
   );

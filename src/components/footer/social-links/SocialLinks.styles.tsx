@@ -41,9 +41,4 @@ export const LRCButton = styled(Button)`
   background: transparent !important;
   color: var(--chakra-colors-neutral-white);
   border: 1px solid rgb(255, 255, 255) !important;
-
-  &.hover {
-    background: white !important;
-    color: #393939;
-  }
 `;

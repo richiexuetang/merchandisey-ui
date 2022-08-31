@@ -51,10 +51,8 @@ const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
       </li>
     );
   } else if (items.type === 'button') {
-    console.log(items.url);
     return (
       <li>
-        {/* <CustomButton variant={items.url} children={items.title} /> */}
         {items.url === 'login' ? (
           <Button
             type='button'
@@ -92,9 +90,7 @@ const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
       </li>
     );
   }
-  // bg: 'neutral.600',
-  //           color: 'neutral.white',
-  //           _hover: { bg: 'neutral.black', color: 'neutral.200' },
+
   return (
     <li
       className={`${depthLevel > 0 ? 'menu-list' : ''}`}
