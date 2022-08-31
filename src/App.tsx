@@ -3,6 +3,7 @@ import { GlobalStyle } from './styles/global';
 import { Navbar } from './components/navbar';
 import { HomePage } from './components/home';
 import LogIn from './components/authenticate/LogIn';
+import SignUp from './components/authenticate/SignUp';
 import { Routes, Route } from 'react-router-dom';
 
 const App: React.FC = () => (
@@ -12,6 +13,7 @@ const App: React.FC = () => (
       <Route path='/' element={<Navbar />}>
         <Route index element={<HomePage />} />
         <Route path='login' element={<LogIn />} />
+        <Route path='signup' element={<SignUp />} />
       </Route>
     </Routes>
   </Suspense>

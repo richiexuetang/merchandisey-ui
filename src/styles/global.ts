@@ -2,32 +2,16 @@ import { createGlobalStyle } from 'styled-components';
 import Suisseintl from '../assets/fonts/SuisseintlRegular.woff2';
 import SuisseintlMedium from '../assets/fonts/SuisseIntl-Medium.woff2';
 import SuisseintlBold from '../assets/fonts/SuisseIntl-Bold.woff2';
-import { chakra, extendTheme, Text } from '@chakra-ui/react';
+import { chakra, extendTheme, Text as ChakraText } from '@chakra-ui/react';
+import { ButtonStyles as Button } from './buttonStyles';
+import { TextStyles as Text } from './textStyles';
+import { FormStyles as Form } from './formStyles';
 
 export const theme = extendTheme({
   components: {
-    CustomButton: {
-      baseStyle: {
-        display: 'inline-flex',
-        appearance: 'none',
-        borderRadius: 0,
-      },
-      variants: {
-        login: {
-          bg: 'neutral.black',
-          color: 'neutral.white',
-          _hover: { bg: 'neutral.black', color: 'neutral.white' },
-        },
-        signup: {
-          bg: 'neutral.600',
-          color: 'neutral.white',
-          _hover: { bg: 'neutral.black', color: 'neutral.200' },
-        },
-      },
-      defaultProps: {
-        variant: 'login',
-      },
-    },
+    Button,
+    Text,
+    Form,
   },
   colors: {
     neutral: {
@@ -51,6 +35,7 @@ export const theme = extendTheme({
     suisseIntlBold: `'SuisseIntlBold', sans-serif`,
     body: `'SuisseIntl', sans-serif`,
     gesturaText: `'GesturaText', sans-serif`,
+    proximaNova: `proxima-nova, sans-serif`,
   },
 });
 
@@ -84,7 +69,6 @@ export const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Suissintl';
         font-style: normal;
-        font-weight: 400;
         src: url(${Suisseintl});
         font-display:swap;
     }
@@ -103,6 +87,17 @@ export const GlobalStyle = createGlobalStyle`
 
     @font-face{font-family:GesturaText-Regular;src:url('https://web-assets.stockx.com/fonts/GesturaText-Regular.woff2') format('woff');font-display:swap;}
 
+    @font-face
+    {
+      font-family:proxima-nova;
+      src:url(https://use.typekit.com/af/085107/00000000000000003b9b3066/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff2"),
+      url(https://use.typekit.com/af/085107/00000000000000003b9b3066/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff"),
+      url(https://use.typekit.com/af/085107/00000000000000003b9b3066/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("opentype");
+      font-weight:600;
+      font-style:normal;
+      font-stretch:normal;
+      font-display:swap;
+    }
 
     a {
       background-color: transparent;
@@ -148,7 +143,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 
-export const DefaultText = chakra(Text, {
+export const DefaultText = chakra(ChakraText, {
   baseStyle: {
     fontFamily: 'var(--chakra-fonts-suisseIntlRegular)',
     lineHeight: 'md',

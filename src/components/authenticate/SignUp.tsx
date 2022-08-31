@@ -12,11 +12,12 @@ import {
   FormControl,
   Link,
   FormLabel,
+  Checkbox,
 } from '@chakra-ui/react';
 import { Link as ReachLink } from 'react-router-dom';
 import { Twitter, Facebook, Apple, Google } from '@mui/icons-material';
 
-const LogIn = () => {
+const SignUp = () => {
   return (
     <Box
       data-component='page-container'
@@ -33,7 +34,7 @@ const LogIn = () => {
           maxW='400px'
           border='solid 1px #e0e0e0'
           borderRadius='4.5px'
-          h='605px'
+          h='735px'
         >
           <HStack
             data-component='toggle-buttons'
@@ -86,6 +87,18 @@ const LogIn = () => {
               </Stack>
 
               <Stack w='full'>
+                {/* First Name Form Field */}
+                <FormControl variant='floating'>
+                  <Input placeholder=' ' autoComplete='off' />
+                  <FormLabel>First Name</FormLabel>
+                </FormControl>
+
+                {/* Last Name Form Field */}
+                <FormControl variant='floating'>
+                  <Input placeholder=' ' autoComplete='off' />
+                  <FormLabel>Last Name</FormLabel>
+                </FormControl>
+
                 {/* Email Address Form Field */}
                 <FormControl variant='floating'>
                   <Input placeholder=' ' autoComplete='off' />
@@ -98,32 +111,26 @@ const LogIn = () => {
                   <FormLabel>Password</FormLabel>
                 </FormControl>
 
-                <Flex justifyContent='flex-end'>
-                  <Text
-                    variant='authentication'
-                    fontSize='12px'
-                    marginBottom='24px'
-                  >
-                    <Link as={ReachLink} to='/'>
-                      Forgot Password?
-                    </Link>
+                <Flex justifyContent='flex-start'>
+                  <Text variant='authentication' fontSize='12px'>
+                    At least 8 characters, 1 uppercase letter, 1 number & 1
+                    symbol
                   </Text>
                 </Flex>
               </Stack>
 
-              <VStack w='full'>
-                <Button variant='authentication'>Log In</Button>
-                <Flex margin='8px 0 12px 0'>
-                  <Text
-                    variant='authentication'
-                    fontSize='12px'
-                    marginBottom='24px'
-                  >
-                    By logging in, you agree to the Terms of Service and Privacy
-                    Policy
-                  </Text>
-                </Flex>
-              </VStack>
+              <Checkbox>
+                <Text
+                  variant='authentication'
+                  fontSize='12px'
+                  marginBottom='12px'
+                >
+                  By signing up, you agree to the Terms of Service and Privacy
+                  Policy
+                </Text>
+              </Checkbox>
+
+              <Button variant='authentication'>Sign Up</Button>
             </VStack>
           </Box>
         </Container>
@@ -132,4 +139,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default SignUp;

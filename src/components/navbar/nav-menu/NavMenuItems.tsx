@@ -50,14 +50,9 @@ const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
         <IconButton
           bg='none'
           w='1.5rem'
-          lineHeight='1'
-          fontWeight='600'
-          fontSize='1.15rem'
           aria-label='Notification Icon'
           h='42px'
           minW='auto'
-          padding='0.625rem'
-          textOverflow='clip'
           marginRight='1.0rem'
           _hover={{
             bg: 'transparent',
@@ -92,7 +87,6 @@ const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
             type='button'
             display='inline-flex'
             borderRadius={0}
-            appearance='none'
             variant='outline'
             _hover={{ bgColor: 'neutral.black', color: 'neutral.white' }}
           >
@@ -102,8 +96,8 @@ const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
           </Button>
         ) : (
           <Button
+            onClick={() => navigate('/signup')}
             type='button'
-            display='inline-flex'
             borderRadius={0}
             appearance='none'
             variant='solid'
