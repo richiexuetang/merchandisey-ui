@@ -205,12 +205,6 @@ export const MenuWrapper = styled.ul`
     display: flex;
   }
 
-  /* &.hover {
-    > li {
-      display: block;
-    }
-  } */
-
   li:hover {
     > ul {
       display: block;
@@ -222,7 +216,11 @@ export const MenuWrapper = styled.ul`
     white-space: nowrap;
     font-weight: 500;
     text-transform: capitalize;
-    list-style: none;
+    margin: 0;
+
+    > a {
+      color: '#242424';
+    }
 
     &.hover {
       > ul {

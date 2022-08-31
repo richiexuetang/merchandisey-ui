@@ -1,18 +1,17 @@
 import * as Styled from './Homepage.styles';
 import { Container } from '@chakra-ui/react';
-import { Navbar } from '../navbar';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { ProductRow } from '../product-row';
 import { ImageSlider } from '../image-slider';
 import { Footer } from '../footer';
+import { MenuBar } from '../menubar';
 
 const HomePage = () => {
   return (
-    <React.Fragment>
+    <>
       <Styled.MainSection>
-        <Navbar />
-
+        <MenuBar />
         <Container
           w='100%'
           marginInline='auto'
@@ -23,11 +22,10 @@ const HomePage = () => {
 
           <ProductRow />
         </Container>
+        <Outlet />
       </Styled.MainSection>
-
       <Footer />
-      <Outlet />
-    </React.Fragment>
+    </>
   );
 };
 export default HomePage;

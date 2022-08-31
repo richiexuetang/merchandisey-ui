@@ -1,5 +1,5 @@
 import { SearchIcon } from '@chakra-ui/icons';
-import { InputGroup, InputLeftElement, Input } from '@chakra-ui/react';
+import { InputGroup, InputLeftElement, Input, Box } from '@chakra-ui/react';
 
 const NavInput = () => {
   const leftElementStyles = {
@@ -31,10 +31,12 @@ const NavInput = () => {
   } as const;
 
   return (
-    <InputGroup>
-      <InputLeftElement {...leftElementStyles} children={<SearchIcon />} />
-      <Input {...inputStyles} placeholder='Search for brand, color, etc.' />
-    </InputGroup>
+    <Box w='90%' paddingRight={8}>
+      <InputGroup>
+        <InputLeftElement {...leftElementStyles} children={<SearchIcon />} />
+        <Input {...inputStyles} placeholder='Search for brand, color, etc.' />
+      </InputGroup>
+    </Box>
   );
 };
 

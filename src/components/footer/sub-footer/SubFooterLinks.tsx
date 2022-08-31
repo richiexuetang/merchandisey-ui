@@ -1,4 +1,4 @@
-import { Outlet, Link as ReachLink } from 'react-router-dom';
+import { Link as ReachLink } from 'react-router-dom';
 import { subFooterLinkData } from '../../../data';
 import * as Styled from './SubFooter.styles';
 
@@ -25,7 +25,6 @@ const SubFooterLinks: React.FC<SubFooterLinksProps> = ({ category }) => {
           );
         })}
       </Styled.SubFooterList>
-      <Outlet />
     </>
   );
 };

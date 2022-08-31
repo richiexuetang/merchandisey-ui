@@ -1,6 +1,5 @@
 import React from 'react';
 import * as Styled from './Menubar.styles';
-import { Outlet } from 'react-router-dom';
 
 const Menubar = () => {
   return (
@@ -30,7 +29,6 @@ const Menubar = () => {
           </Styled.MenuBarListItem>
         </Styled.MenuBarList>
       </Styled.MenuBarContainer>
-      <Outlet />
     </Styled.MenuBarNav>
   );
 };

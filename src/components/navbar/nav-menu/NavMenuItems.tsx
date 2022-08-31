@@ -4,7 +4,8 @@ import Dropdown from './Dropdown';
 import './index.css';
 import * as Styled from '../navbar.styles';
 import { NotificationsNone } from '@mui/icons-material';
-import { Button, Text } from '@chakra-ui/react';
+import { Button, IconButton, Text, chakra } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 export interface NavMenuItemsProps {
   items: MenuItem;
@@ -12,6 +13,7 @@ export interface NavMenuItemsProps {
 }
 
 const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
+  const navigate = useNavigate();
   const [dropdown, setDropdown] = useState(false);
   let ref = useRef<HTMLDivElement>();
 
@@ -45,9 +47,40 @@ const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
   if (items.type === 'icon') {
     return (
       <li>
-        <Button className='notification-button'>
-          <NotificationsNone />
-        </Button>
+        <IconButton
+          bg='none'
+          w='1.5rem'
+          lineHeight='1'
+          fontWeight='600'
+          fontSize='1.15rem'
+          aria-label='Notification Icon'
+          h='42px'
+          minW='auto'
+          padding='0.625rem'
+          textOverflow='clip'
+          marginRight='1.0rem'
+          _hover={{
+            bg: 'transparent',
+          }}
+          icon={
+            <>
+              <NotificationsNone display='inline-block' />
+              <chakra.span
+                pos='absolute'
+                top='-1px'
+                right='-1px'
+                p='4px'
+                fontSize='xs'
+                fontWeight='bold'
+                lineHeight='none'
+                color='green.700'
+                transform='translate(-50%,160%)'
+                bg='green.700'
+                rounded='full'
+              />
+            </>
+          }
+        />
       </li>
     );
   } else if (items.type === 'button') {
@@ -55,6 +88,7 @@ const NavMenuItems: React.FC<NavMenuItemsProps> = ({ items, depthLevel }) => {
       <li>
         {items.url === 'login' ? (
           <Button
+            onClick={() => navigate('/login')}
             type='button'
             display='inline-flex'
             borderRadius={0}

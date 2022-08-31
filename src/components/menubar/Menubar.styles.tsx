@@ -30,6 +30,7 @@ export const MenuBarList = styled.ul`
   width: 1296px;
   height: 48px;
   justify-content: center;
+  font-family: 'var(--chakra-fonts-suisseIntlMedium)';
 
   @media screen and (min-width: 48em) {
     margin: 0 1rem;
