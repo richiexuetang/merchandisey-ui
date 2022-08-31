@@ -45,7 +45,6 @@ export const NavLogo = styled.span`
     line-height: 1em;
     flex-shrink: 0;
     color: #0f0f0f;
-    vertical-align: middle;
     fill: #0f0f0f;
 
     @media screen and (min-width: 48em) {
@@ -117,7 +116,6 @@ export const Search = styled.div`
     display: inline-block;
     line-height: 1em;
     flex-shrink: 0;
-    vertical-align: middle;
   }
 `;
 

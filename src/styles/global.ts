@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import Suisseintl from '../assets/fonts/SuisseintlRegular.woff2';
-import { extendTheme } from '@chakra-ui/react';
+import SuisseintlMedium from '../assets/fonts/SuisseIntl-Medium.woff2';
+import SuisseintlBold from '../assets/fonts/SuisseIntl-Bold.woff2';
+import { chakra, extendTheme, Text } from '@chakra-ui/react';
 
 export const theme = extendTheme({
   components: {
@@ -44,7 +46,11 @@ export const theme = extendTheme({
     md: 1.375,
   },
   fonts: {
-    body: `'SuisseIntl-Regular', sans-serif`,
+    suisseIntlRegular: `'SuisseIntl', sans-serif`,
+    suisseIntlMedium: `'SuisseIntlMedium', sans-serif`,
+    suisseIntlBold: `'SuisseIntlBold', sans-serif`,
+    body: `'SuisseIntl', sans-serif`,
+    gesturaText: `'GesturaText', sans-serif`,
   },
 });
 
@@ -80,7 +86,43 @@ export const GlobalStyle = createGlobalStyle`
         font-style: normal;
         font-weight: 400;
         src: url(${Suisseintl});
+        font-display:swap;
     }
+
+    @font-face {
+      font-family: 'SuisseintlMedium';
+      src: url(${SuisseintlMedium});
+        font-display:swap;
+    }
+
+    @font-face {
+      font-family: "SuisseintlBold";
+      src: url(${SuisseintlBold});
+        font-display:swap;
+    }
+
+    @font-face{font-family:GesturaText-Regular;src:url('https://web-assets.stockx.com/fonts/GesturaText-Regular.woff2') format('woff');font-display:swap;}
+
+
+    a {
+      background-color: transparent;
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    img {
+      border-style: none;
+    }
+
+    img,svg,video,canvas,audio,iframe,embed,object{
+      display:block;
+    }
+
+    img,video{
+      max-width:100%;
+      height:auto;
+    }
+
 
     *{
         margin: 0;
@@ -88,8 +130,33 @@ export const GlobalStyle = createGlobalStyle`
         outline: 0;
         font-family: 'Suissintl', sans-serif;
     }
+
+    body {
+      position: relative;
+      min-height: 100%;
+      font-feature-settings: 'kern';
+      font-size: 100%;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
     #root{
         margin: 0 auto;
         min-height: 100vh;
     }
 `;
+
+export const DefaultText = chakra(Text, {
+  baseStyle: {
+    fontFamily: 'var(--chakra-fonts-suisseIntlRegular)',
+    lineHeight: 'md',
+    letterSpacing: '0.004rem',
+    overflow: 'hidden',
+    color: 'neutral.black',
+    fontSize: 'xs',
+    height: '34px',
+    fontWeight: 'medium',
+  },
+});

@@ -1,16 +1,8 @@
 import styled from 'styled-components';
 
 export const ProductRow = styled.div`
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
   justify-content: space-between;
   margin-top: var(--chakra-space-6);
   margin-bottom: var(--chakra-space-4);
@@ -24,6 +16,7 @@ export const SmartGridRow = styled.ul`
   margin-inline: calc(var(--chakra-space-4) * -1);
   padding-inline: var(--chakra-space-4);
   overflow: auto;
+  grid-gap: 1.5rem;
 `;
 
 export const SmartGridWrapper = styled.div`

@@ -10,22 +10,21 @@ import { Footer } from '../footer';
 const HomePage = () => {
   return (
     <React.Fragment>
-      <Navbar />
       <Styled.MainSection>
-        <ImageSlider />
-        <Styled.SectionWrapper>
-          <Container
-            w='100%'
-            marginInlineStart='auto'
-            marginInlineEnd='auto'
-            maxWidth='1296px'
-            paddingInlineStart='1rem'
-            paddingInlineEnd='1rem'
-          >
-            <ProductRow />
-          </Container>
-        </Styled.SectionWrapper>
+        <Navbar />
+
+        <Container
+          w='100%'
+          marginInlineEnd='auto'
+          maxWidth='1296px'
+          paddingInline='1rem'
+        >
+          <ImageSlider />
+
+          <ProductRow />
+        </Container>
       </Styled.MainSection>
+
       <Footer />
       <Outlet />
     </React.Fragment>

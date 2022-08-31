@@ -1,12 +1,4 @@
-import {
-  Box,
-  Spacer,
-  VStack,
-  Text,
-  List,
-  ListItem,
-  Icon,
-} from '@chakra-ui/react';
+import { Spacer } from '@chakra-ui/react';
 import * as Styled from './SocialLinks.styles';
 import {
   Twitter,
@@ -16,6 +8,7 @@ import {
   Apple,
   Android,
 } from '@mui/icons-material';
+import { SocialIconGroup } from './social-icon-group';
 
 const SocialLinks = () => {
   return (
@@ -31,48 +24,16 @@ const SocialLinks = () => {
       </Styled.LRCContainer>
       <Spacer />
 
-      <VStack>
-        <Box>
-          <Text color='neutral.white'>Find Us On Social</Text>
-          <List display='flex' flexDirection='row'>
-            <ListItem>
-              <Icon as={Twitter} color='white' />
-            </ListItem>
-            <ListItem>
-              <Icon as={Facebook} color='white' />
-            </ListItem>
-            <ListItem>
-              <Icon as={Instagram} color='white' />
-            </ListItem>
-            <ListItem>
-              <Icon as={YouTube} color='white' />
-            </ListItem>
-          </List>
-        </Box>
-      </VStack>
-
+      <SocialIconGroup
+        text='Find Us On Social'
+        icons={[Twitter, Facebook, Instagram, YouTube]}
+      />
       <Spacer />
-      <VStack>
-        <Box>
-          <Text color='neutral.white'>Download Our App</Text>
-          <List display='flex' flexDirection='row'>
-            <ListItem>
-              <Icon as={Apple} color='white' />
-            </ListItem>
-            <ListItem>
-              <Icon as={Android} color='white' />
-            </ListItem>
-          </List>
-        </Box>
-      </VStack>
+      <SocialIconGroup text='Download Our App' icons={[Apple, Android]} />
       <Spacer />
-      <Box>
-        <Text color='white'>Use Assistive Technology</Text>
-      </Box>
+      <SocialIconGroup text='Use Assistive Technology' icons={[]} />
       <Spacer />
-      <Box>
-        <Text color='white'>Proudly Built in Detroit</Text>
-      </Box>
+      <SocialIconGroup text='Proudly Built in Detroit' icons={[]} />
     </Styled.FlexContainer>
   );
 };

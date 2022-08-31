@@ -8,6 +8,7 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@babel/runtime": "^7.18.9",
+    "@chakra-ui/core": "^0.8.0",
     "@chakra-ui/icons": "^2.0.9",
     "@chakra-ui/react": "^2.2.9",
     "@emotion/react": "^11",

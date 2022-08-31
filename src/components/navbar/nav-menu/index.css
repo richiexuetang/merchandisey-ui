@@ -110,7 +110,6 @@ header {
 
 .category-list:hover {
   border-style: solid;
-  border-width: 0;
   border-right: 2px solid;
 
   border-right-color: var(--chakra-colors-green-700) !important;
