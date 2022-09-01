@@ -10,14 +10,12 @@ import {
   Flex,
   Stack,
   FormControl,
-  Link,
   FormLabel,
   Checkbox,
   InputGroup,
   InputRightElement,
   IconButton,
 } from '@chakra-ui/react';
-import { Link as ReachLink } from 'react-router-dom';
 import {
   Twitter,
   Facebook,

@@ -24,9 +24,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     >
       <div className={`${depthLevel > 2 ? 'category-container' : ''}`}>
         {submenus.map((submenu, index) => (
-          //<li key={index} className='menu-list category-list'>
           <NavMenuItems items={submenu} key={index} depthLevel={depthLevel} />
-          //</li>
         ))}
       </div>
     </ul>
