@@ -4,6 +4,7 @@ import { Navbar } from './components/navbar';
 import { HomePage } from './components/home';
 import LogIn from './components/authenticate/LogIn';
 import SignUp from './components/authenticate/SignUp';
+import ProductPage from './components/product-page/ProductPage';
 import { Routes, Route } from 'react-router-dom';
 
 const App: React.FC = () => (
@@ -14,6 +15,7 @@ const App: React.FC = () => (
         <Route index element={<HomePage />} />
         <Route path='login' element={<LogIn />} />
         <Route path='signup' element={<SignUp />} />
+        <Route path='sneakers' element={<ProductPage />} />
       </Route>
     </Routes>
   </Suspense>

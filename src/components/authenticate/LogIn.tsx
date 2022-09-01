@@ -67,7 +67,11 @@ const LogIn = () => {
             >
               Sign Up
             </Button>
-            <Button variant='accessToggle' flex='1'>
+            <Button
+              borderBottom='2px solid #010101'
+              variant='accessToggle'
+              flex='1'
+            >
               Log In
             </Button>
           </HStack>

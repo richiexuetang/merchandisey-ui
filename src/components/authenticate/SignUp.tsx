@@ -61,7 +61,11 @@ const SignUp = () => {
             h='50px'
             margin='6px 16px 0px 16px'
           >
-            <Button variant='accessToggle' flex='1'>
+            <Button
+              borderBottom='2px solid #010101'
+              variant='accessToggle'
+              flex='1'
+            >
               Sign Up
             </Button>
             <Button
