@@ -1,5 +1,6 @@
-import React from 'react';
 import * as Styled from './Menubar.styles';
+import { Link as ReachLink } from 'react-router-dom';
+import { Link } from '@chakra-ui/react';
 
 const Menubar = () => {
   return (
@@ -7,25 +8,39 @@ const Menubar = () => {
       <Styled.MenuBarContainer>
         <Styled.MenuBarList>
           <Styled.MenuBarListItem>
-            <Styled.MenubarLink to='/'>Sneakers</Styled.MenubarLink>
+            <Link as={ReachLink} to='/sneakers' h='26px'>
+              Sneakers
+            </Link>
           </Styled.MenuBarListItem>
           <Styled.MenuBarListItem>
-            <Styled.MenubarLink to='/'>Apparel</Styled.MenubarLink>
+            <Link as={ReachLink} to='/apparel'>
+              Apparel
+            </Link>
           </Styled.MenuBarListItem>
           <Styled.MenuBarListItem>
-            <Styled.MenubarLink to='/'>Electronics</Styled.MenubarLink>
+            <Link as={ReachLink} to='/sneakers'>
+              Electronics
+            </Link>
           </Styled.MenuBarListItem>
           <Styled.MenuBarListItem>
-            <Styled.MenubarLink to='/'>Trading Cards</Styled.MenubarLink>
+            <Link as={ReachLink} to='/sneakers'>
+              Trading Cards
+            </Link>
           </Styled.MenuBarListItem>
           <Styled.MenuBarListItem>
-            <Styled.MenubarLink to='/'>Collectibles</Styled.MenubarLink>
+            <Link as={ReachLink} to='/sneakers'>
+              Collectibles
+            </Link>
           </Styled.MenuBarListItem>
           <Styled.MenuBarListItem>
-            <Styled.MenubarLink to='/'>Accessories</Styled.MenubarLink>
+            <Link as={ReachLink} to='/sneakers'>
+              Accessories
+            </Link>
           </Styled.MenuBarListItem>
           <Styled.MenuBarListItem>
-            <Styled.MenubarLink to='/'>NFTs</Styled.MenubarLink>
+            <Link as={ReachLink} to='/sneakers'>
+              NFTs
+            </Link>
           </Styled.MenuBarListItem>
         </Styled.MenuBarList>
       </Styled.MenuBarContainer>
